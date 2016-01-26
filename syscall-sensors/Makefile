@@ -29,8 +29,9 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-	echo $PKG_UNPACK
-#	mkdir -p $(PKG_BUILD_DIR)
+	mkdir -p $(PKG_BUILD_DIR)
+	echo $(PKG_BUILD_DIR)
+	echo $(PKG_UNPACK)
 #	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
 endef
 
