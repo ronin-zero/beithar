@@ -28,8 +28,9 @@ processes.  They can be used to train a
 support-vector machine for malware detection.
 endef
 
-#define Build/Prepare
-#	mkdir -p $(PKG_BUILD_DIR)
+define Build/Prepare
+	mkdir -p $(PKG_BUILD_DIR)
+	echo $(PKG_BUILD_DIR)
 #	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
 #endef
 
