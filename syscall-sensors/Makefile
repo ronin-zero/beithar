@@ -28,10 +28,11 @@ processes.  They can be used to train a
 support-vector machine for malware detection.
 endef
 
-#define Build/Prepare
+define Build/Prepare
+	echo $PKG_UNPACK
 #	mkdir -p $(PKG_BUILD_DIR)
 #	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
-#endef
+endef
 
 define Package/syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
