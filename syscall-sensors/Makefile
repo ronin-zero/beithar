@@ -30,8 +30,8 @@ endef
 
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
-	echo $(PKG_BUILD_DIR)
-	echo $(PKG_UNPACK)
+	echo $PKG_BUILD_DIR
+	echo $PKG_UNPACK
 #	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
 endef
 
