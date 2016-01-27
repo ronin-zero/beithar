@@ -5,12 +5,12 @@ PKG_VERSION:=1.2.0
 PKG_RELEASE:=1
 PKG_MAINTAINER:=Alexander Duff <amd435@drexel.edu>
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/alexanderduff/linux_sensors.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_VERSION:=HEAD
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -29,12 +29,7 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-	mkdir -p $(PKG_BUILD_DIR)
-	echo " "
-	echo "Calling: $(PKG_UNPACK)"
-	echo " "
 	$(PKG_UNPACK)
-#	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Package/syscall-sensors/install
