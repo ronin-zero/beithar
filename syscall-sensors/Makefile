@@ -36,7 +36,7 @@ endef
 
 define Package/syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bin/syscall-sensors $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensors $(1)/usr/sbin
 endef
 
 $(eval $(call BuildPackage,syscall-sensors))
