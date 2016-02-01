@@ -14,7 +14,7 @@ PKG_SOURCE_VERSION:=HEAD
 
 CMAKE_INSTALL:=1
 
-ifeq ($(CONFIG_SYSCALL-SENSORS_GDB),y)
+ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
 	TARGET_CFLAGS+= -g
 endif
 
@@ -36,7 +36,7 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-	ifeq ($(CONFIG_SYSCALL-SENSORS_LOCAL),y)
+	ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 		echo ""
 		echo "Use local source."
 		echo ""

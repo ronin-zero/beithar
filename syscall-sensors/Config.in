@@ -1,7 +1,7 @@
 menu "Development Configuration"
 	depends on PACKAGE_syscall-sensors
 
-config SYSCALL-SENSORS_LOCAL
+config SYSCALL_SENSORS_LOCAL
 	bool "Development build (local source)"
 	default n
 	help
@@ -10,7 +10,7 @@ config SYSCALL-SENSORS_LOCAL
 
 	  Unless you are one of the developers on the project, you want to leave this as 'n'
 
-config SYSCALL-SENSORS_GDB
+config SYSCALL_SENSORS_GDB
 	bool "Compile with support for GDB"
 	select PACKAGE_gdb
 	default n
