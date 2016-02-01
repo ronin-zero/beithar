@@ -1,0 +1,11 @@
+if PACKAGE_syscall-sensors
+
+config SYSCALL-SENSORS_CUSTOM
+	bool "Development build (local source)"
+	default n
+	help
+	  This is for the developers to make changes to the package source code
+	  without having to download the entire thing from git-hub.
+
+	  Unless you are one of the developers on the project, you want to leave this as 'n'
+endif
