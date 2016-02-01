@@ -14,6 +14,11 @@ PKG_SOURCE_VERSION:=HEAD
 
 CMAKE_INSTALL:=1
 
+ifeq ($(CONFIG_SYSCALL-SENSORS_GDB),y)
+	DEPENDS:=+gdb
+	TARGET_CFLAGS+= -g
+endif
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
@@ -31,7 +36,19 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-	$(PKG_UNPACK)
+	ifeq ($(CONFIG_SYSCALL-SENSORS_LOCAL),y)
+		echo ""
+		echo "Use local source."
+		echo ""
+		rm -rf $(PKG_BUILD_DIR)
+		mkdir $(PKG_BUILD_DIR)
+		cp -r ~/drexel/research/linux_sensors/* $(PKG_BUILD_DIR)
+	else
+		echo ""
+		echo "Unpacking feed source."
+		echo ""
+		$(PKG_UNPACK)
+	endif
 endef
 
 define Package/syscall-sensors/config

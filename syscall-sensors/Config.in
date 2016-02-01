@@ -1,7 +1,7 @@
-menu "Configuration"
+menu "Development Configuration"
 	depends on PACKAGE_syscall-sensors
 
-config SYSCALL-SENSORS_CUSTOM
+config SYSCALL-SENSORS_LOCAL
 	bool "Development build (local source)"
 	default n
 	help
@@ -9,5 +9,12 @@ config SYSCALL-SENSORS_CUSTOM
 	  without having to download the entire thing from git-hub.
 
 	  Unless you are one of the developers on the project, you want to leave this as 'n'
+
+config SYSCALL-SENSORS_GDB
+	bool "Compile with support for GDB"
+	default n
+	help
+	  If you would like to run the program through GDB, enable this option.
+	  This is no reason to enable this unless you are a developer on the project.
 
 endmenu
