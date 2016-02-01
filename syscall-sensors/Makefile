@@ -32,6 +32,9 @@ endef
 
 define Build/Prepare
 ifeq($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
+	echo ""
+	echo "Heynow"
+	echo ""
 	rm -rf $(PKG_BUILD_DIR)/*
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) -r ~/drexel/research/linux_sensors/* $(PKG_BULD_DIR)
