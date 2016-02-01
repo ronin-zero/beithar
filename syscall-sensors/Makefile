@@ -43,7 +43,7 @@ ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)
 	mkdir $(PKG_BUILD_DIR)
 	cp -r ~/drexel/research/linux_sensors/* $(PKG_BUILD_DIR)
-else
+elif ($(CONFIG_SYSCALL_SENSORS_LOCAL),n)
 	echo ""
 	echo "Unpacking feed source."
 	echo ""
