@@ -36,19 +36,19 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-	ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
-		echo ""
-		echo "Use local source."
-		echo ""
-		rm -rf $(PKG_BUILD_DIR)
-		mkdir $(PKG_BUILD_DIR)
-		cp -r ~/drexel/research/linux_sensors/* $(PKG_BUILD_DIR)
-	else
-		echo ""
-		echo "Unpacking feed source."
-		echo ""
-		$(PKG_UNPACK)
-	endif
+ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
+	echo ""
+	echo "Use local source."
+	echo ""
+	rm -rf $(PKG_BUILD_DIR)
+	mkdir $(PKG_BUILD_DIR)
+	cp -r ~/drexel/research/linux_sensors/* $(PKG_BUILD_DIR)
+else
+	echo ""
+	echo "Unpacking feed source."
+	echo ""
+	$(PKG_UNPACK)
+endif
 endef
 
 define Package/syscall-sensors/config
