@@ -34,6 +34,10 @@ define Build/Prepare
 	$(PKG_UNPACK)
 endef
 
+define Package/syscall-sensors/config
+	source "$(SOURCE)/Config.in"
+endef
+
 define Package/syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensors $(1)/usr/sbin
