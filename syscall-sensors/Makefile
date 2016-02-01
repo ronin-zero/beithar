@@ -15,9 +15,9 @@ PKG_SOURCE_VERSION:=HEAD
 CMAKE_INSTALL:=1
 
 ifeq ($(CONFIG_SYSCALL-SENSORS_GDB),y)
-	DEPENDS:=+gdb
 	TARGET_CFLAGS+= -g
 endif
+
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
