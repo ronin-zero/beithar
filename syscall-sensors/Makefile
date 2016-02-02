@@ -31,8 +31,8 @@ support-vector machine for malware detection.
 endef
 
 define Build/Prepare
-ifeq($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
-  echo "STUFFF!!!!"
+ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
+	echo "STUFFF!!!!"
 endif
 #	echo ""
 #	echo "Heynow"
