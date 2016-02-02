@@ -17,17 +17,6 @@ CMAKE_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
-	echo ""
-	echo "Adding -g to TARGET_CFLAGS"
-	echo ""
-	echo "Currently: $(TARGET_CFLAGS)"
-	echo ""
-	TARGET_CFLAGS+= -g
-	echo ""
-	echo "Flags are now $(TARGET_CFLAGS)"
-	echo ""
-endif
 
 define Package/syscall-sensors
 	SECTION:=utils
@@ -63,6 +52,19 @@ endef
 define Package/syscall-sensors/config
 	source "$(SOURCE)/Config.in"
 endef
+
+ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
+	echo ""
+	echo "Adding -g to TARGET_CFLAGS"
+	echo ""
+	echo "Currently: $(TARGET_CFLAGS)"
+	echo ""
+	TARGET_CFLAGS+= -g
+	echo ""
+	echo "Flags are now $(TARGET_CFLAGS)"
+	echo ""
+endif
+
 
 define Package/syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
