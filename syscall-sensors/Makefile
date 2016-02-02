@@ -58,4 +58,8 @@ define Package/syscall-sensors/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensors $(1)/usr/sbin
 endef
 
+ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
+  TARGET_CFLAGS += -g
+endif
+
 $(eval $(call BuildPackage,syscall-sensors))
