@@ -32,7 +32,7 @@ endef
 
 define Build/Prepare
 ifeq($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
-	echo "STUFFF!!!!"
+  echo "STUFFF!!!!"
 endif
 #	echo ""
 #	echo "Heynow"
