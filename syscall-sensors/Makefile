@@ -12,8 +12,6 @@ PKG_SOURCE_URL:=https://github.com/alexanderduff/linux_sensors.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_VERSION:=HEAD
 
-CMAKE_INSTALL:=1
-
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
