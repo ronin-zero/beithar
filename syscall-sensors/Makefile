@@ -60,6 +60,7 @@ endef
 
 ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
   TARGET_CFLAGS += -g
+  TARGET_CXXFLAGS += -g
 endif
 
 $(eval $(call BuildPackage,syscall-sensors))
