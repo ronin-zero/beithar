@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=syscall-sensors
-PKG_VERSION:=1.2.9
+PKG_VERSION:=1.2.10
 PKG_RELEASE:=1
 PKG_MAINTAINER:=Alexander Duff <amd435@drexel.edu>
 
@@ -20,7 +20,7 @@ define Package/syscall-sensors
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=System Call Sensors
-	DEPENDS:=+libpthread +libc +libstdcpp +librt
+	DEPENDS:=+USE_GLIBC +libpthread +libc +libstdcpp +librt +libthread-db 
 endef
 
 define Package/syscall-sensors/description
@@ -32,17 +32,10 @@ endef
 define Build/Prepare
 
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
-	echo ""
-	echo "Heynow"
-	echo ""
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
-	$(CP) -r ~/drexel/research/linux_sensors/*/ $(PKG_BULD_DIR)
-	$(CP) ~/drexel/research/linux_sensors/* $(PKG_BUILD_DIR)
+	$(CP) $(CONFIG_SYSCALLS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
-	echo ""
-	echo "Unpacking feed source."
-	echo ""
 	$(PKG_UNPACK)
 endif
 endef

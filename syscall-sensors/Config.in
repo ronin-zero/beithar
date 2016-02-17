@@ -10,6 +10,15 @@ config SYSCALL_SENSORS_LOCAL
 
 	  Unless you are one of the developers on the project, you want to leave this as 'n'
 
+config SYSCALL_SENSORS_LOCAL_SOURCE_PATH
+	depends on SYSCALL_SENSORS_LOCAL
+	string "Local source location (directory)"
+	help
+	  List the directory where your local copy of the source code can be found.
+	  For example: '/home/username/syscall_sensors/'
+	  The path should end with a trailing / and that directory could be the root of
+	  where your source for the code is.
+
 config SYSCALL_SENSORS_GDB
 	bool "Compile with support for GDB"
 	select PACKAGE_gdb
