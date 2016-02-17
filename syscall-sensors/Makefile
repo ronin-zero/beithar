@@ -20,7 +20,7 @@ define Package/syscall-sensors
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=System Call Sensors
-	DEPENDS:=+USE_GLIBC +libpthread +libc +libstdcpp +librt +libthread-db 
+	DEPENDS:=+libpthread +libc +libstdcpp +librt +libthread-db 
 endef
 
 define Package/syscall-sensors/description
