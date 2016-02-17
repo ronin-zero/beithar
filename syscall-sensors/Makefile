@@ -19,8 +19,7 @@ include $(INCLUDE_DIR)/cmake.mk
 define Package/syscall-sensors
 	SECTION:=utils
 	CATEGORY:=Utilities
-	TITLE:=System Call Sensors
-	DEPENDS:=+libpthread +libc +libstdcpp +librt +libthread-db 
+	TITLE:=System Call Sensors 
 endef
 
 define Package/syscall-sensors/description
