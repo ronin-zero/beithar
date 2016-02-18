@@ -41,7 +41,7 @@ ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	echo ""
 	echo "$(CONFIG_SYSCALL_SENSORS_LOCAL_SOURCE_PATH)"
 	echo ""
-	$(CP) $(CONFIG_SYSCALLS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
+	$(CP) $(CONFIG_SYSCALL_SENSORS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
 	echo ""
 	echo "Not using local source..."
