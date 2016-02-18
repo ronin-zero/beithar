@@ -28,23 +28,28 @@ processes.  They can be used to train a
 support-vector machine for malware detection.
 endef
 
-define Build/Prepare
+define Package/syscall-sensors/config
+	source "$(SOURCE)/Config.in"
+endef
 
+
+define Build/Prepare
+	echo "ayyyy"
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
 	echo ""
-	echo "$CONFIG_SYSCALLS_LOCAL_SOURCE_PATH"
+	echo "$(CONFIG_SYSCALLS_LOCAL_SOURCE_PATH)"
 	echo ""
 	$(CP) $(CONFIG_SYSCALLS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
+	echo ""
+	echo "Not using local source..."
+	echo ""
 	$(PKG_UNPACK)
 endif
 endef
 
-define Package/syscall-sensors/config
-	source "$(SOURCE)/Config.in"
-endef
 
 define Package/syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
