@@ -33,6 +33,9 @@ define Build/Prepare
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
+	echo ""
+	echo "$CONFIG_SYSCALLS_LOCAL_SOURCE_PATH"
+	echo ""
 	$(CP) $(CONFIG_SYSCALLS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
 	$(PKG_UNPACK)
