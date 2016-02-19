@@ -31,6 +31,13 @@ endef
 
 define Package/syscall-sensors/config
 	source "$(SOURCE)/Config.in"
+	select KERNEL_FTRACE
+	select KERNEL_FTRACE_SYSCALLS
+	select KERNEL_ENABLE_DEFAULT_TRACERS
+	select KERNEL_FUNCTION_TRACER
+	select KERNEL_FUNCTION_GRAPH_TRACER
+	select KERNEL_DYNAMIC_FTRACE
+	select KERNEL_FUNCTION_PROFILER
 endef
 
 
