@@ -1,0 +1,30 @@
+menu "Development Configuration"
+	depends on PACKAGE_syscall-sensors
+
+config ANOMALY_DETECTORS_LOCAL
+	bool "Development build (local source)"
+	default n
+	help
+	  This is for the developers to make changes to the package source code
+	  without having to download the entire thing from git-hub.
+
+	  Unless you are one of the developers on the project, you want to leave this as 'n'
+
+config ANOMALY_DETECTORS_LOCAL_SOURCE_PATH
+	depends on SYSCALL_SENSORS_LOCAL
+	string "Local source location (directory)"
+	help
+	  List the directory where your local copy of the source code can be found.
+	  For example: '/home/username/anomaly_detectors/'
+	  The path should end with a trailing / and that directory could be the root of
+	  where your source for the code is.
+
+config ANOMALY_DETECTORS_GDB
+	bool "Compile with support for GDB"
+	select PACKAGE_gdb
+	default n
+	help
+	  If you would like to run the program through GDB, enable this option.
+	  This is no reason to enable this unless you are a developer on the project.
+
+endmenu
