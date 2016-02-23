@@ -35,10 +35,16 @@ endef
 
 define Build/Prepare
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
+	echo ""
+	echo "JUST"
+	echo ""
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) $(CONFIG_SYSCALL_SENSORS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
+	echo ""
+	echo "DESIGNATED"
+	echo ""
 	$(PKG_UNPACK)
 endif
 endef
