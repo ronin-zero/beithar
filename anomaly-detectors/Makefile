@@ -28,12 +28,18 @@ program to monitor kernel-level system calls and
 detect when an anomalous state is occurring on the system.
 endef
 
+define Package/anomaly-detectors/config
+	source "$(SOURCE)/Config.in"
+endef
+
 define Build/Prepare
 ifeq ($(CONFIG_ANOMALY_DETECTORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) $(CONFIG_ANOMALY_DETECTORS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
+else
 	$(PKG_UNPACK)
+endif
 endef
 
 define Package/anomaly-detectors/install
