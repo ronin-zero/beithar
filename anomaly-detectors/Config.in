@@ -1,5 +1,5 @@
 menu "Development Configuration"
-	depends on PACKAGE_syscall-sensors
+	depends on PACKAGE_anomaly-detectors
 
 config ANOMALY_DETECTORS_LOCAL
 	bool "Development build (local source)"
@@ -11,7 +11,7 @@ config ANOMALY_DETECTORS_LOCAL
 	  Unless you are one of the developers on the project, you want to leave this as 'n'
 
 config ANOMALY_DETECTORS_LOCAL_SOURCE_PATH
-	depends on SYSCALL_SENSORS_LOCAL
+	depends on ANOMALY_DETECTORS_LOCAL
 	string "Local source location (directory)"
 	help
 	  List the directory where your local copy of the source code can be found.
