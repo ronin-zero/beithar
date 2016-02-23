@@ -34,6 +34,7 @@ endef
 
 
 define Build/Prepare
+
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	echo ""
 	echo "JUST"
@@ -47,6 +48,7 @@ else
 	echo ""
 	$(PKG_UNPACK)
 endif
+
 endef
 
 
