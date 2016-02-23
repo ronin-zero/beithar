@@ -12,8 +12,6 @@ PKG_SOURCE_URL:=https://github.com/alexanderduff/linux_anomaly_detection.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_VERSION:=HEAD
 
-CMAKE_INSTALL:=1
-
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
@@ -31,6 +29,10 @@ detect when an anomalous state is occurring on the system.
 endef
 
 define Build/Prepare
+ifeq ($(CONFIG_ANOMALY_DETECTORS_LOCAL),y)
+	rm -rf $(PKG_BUILD_DIR)/
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) $(CONFIG_ANOMALY_DETECTORS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 	$(PKG_UNPACK)
 endef
 
@@ -38,5 +40,10 @@ define Package/anomaly-detectors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/anomaly-detectors $(1)/usr/sbin
 endef
+
+ifeq ($(CONFIG_ANOMALY_DETECTORS_GDB),y)
+  CFLAGS += -g
+  CXXFLAGS += -g
+endif
 
 $(eval $(call BuildPackage,anomaly-detectors))
