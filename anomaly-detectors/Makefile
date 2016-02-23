@@ -19,7 +19,7 @@ define Package/anomaly-detectors
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=System Call-Based Anomaly Detectors
-	DEPENDS:=+libpthread +libc +libstdcpp +librt
+	DEPENDS:=+librt +libpthread +libstdcpp +PACKAGE_syscall-sensors
 endef
 
 define Package/anomaly-detectors/description

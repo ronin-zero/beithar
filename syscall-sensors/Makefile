@@ -34,18 +34,11 @@ endef
 
 
 define Build/Prepare
-	echo "ayyyy"
 ifeq ($(CONFIG_SYSCALL_SENSORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
-	echo ""
-	echo "$(CONFIG_SYSCALL_SENSORS_LOCAL_SOURCE_PATH)"
-	echo ""
 	$(CP) $(CONFIG_SYSCALL_SENSORS_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
 else
-	echo ""
-	echo "Not using local source..."
-	echo ""
 	$(PKG_UNPACK)
 endif
 endef
