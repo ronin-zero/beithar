@@ -33,6 +33,7 @@ define Package/anomaly-detectors/config
 endef
 
 define Build/Prepare
+
 ifeq ($(CONFIG_ANOMALY_DETECTORS_LOCAL),y)
 	rm -rf $(PKG_BUILD_DIR)/
 	mkdir -p $(PKG_BUILD_DIR)
@@ -40,6 +41,7 @@ ifeq ($(CONFIG_ANOMALY_DETECTORS_LOCAL),y)
 else
 	$(PKG_UNPACK)
 endif
+
 endef
 
 define Package/anomaly-detectors/install
