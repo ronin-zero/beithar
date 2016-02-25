@@ -32,6 +32,9 @@ define Package/syscall-sensors/config
 	source "$(SOURCE)/Config.in"
 endef
 
+define Build/Clean
+	rm -rf $(PKG_BUILD_DIR)/
+endef
 
 define Build/Prepare
 

@@ -32,6 +32,10 @@ define Package/anomaly-detectors/config
 	source "$(SOURCE)/Config.in"
 endef
 
+define Build/Clean
+	rm -rf $(PKG_BUILD_DIR)/
+endef
+
 define Build/Prepare
 
 ifeq ($(CONFIG_ANOMALY_DETECTORS_LOCAL),y)
