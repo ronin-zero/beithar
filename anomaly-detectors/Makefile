@@ -56,6 +56,7 @@ endef
 ifeq ($(CONFIG_ANOMALY_DETECTORS_GDB),y)
   CFLAGS += -g
   CXXFLAGS += -g
+  CMAKE_DEBUG="-DCMAKE_BUILD_TYPE=Debug"
 endif
 
 $(eval $(call BuildPackage,anomaly-detectors))
