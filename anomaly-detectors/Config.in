@@ -22,6 +22,7 @@ config ANOMALY_DETECTORS_LOCAL_SOURCE_PATH
 config ANOMALY_DETECTORS_GDB
 	bool "Compile with support for GDB"
 	select PACKAGE_gdb
+	select PACKAGE_gdbserver
 	default n
 	help
 	  If you would like to run the program through GDB, enable this option.
