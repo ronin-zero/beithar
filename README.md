@@ -1,4 +1,6 @@
-# Heimdall
+# Beithar
+
+(formerly "Heimdall")
 
 ## Description
 
@@ -20,12 +22,12 @@ Once installed, navigate to your trunk directory (the root directory for your cl
 
 To enable this feed, open feeds.conf.default and add the following line (with the quotes removed):
 
-'src-git heimdall https://github.com/alexanderduff/heimdall.git'
+'src-git beithar https://github.com/ronin-zero/beithar.git
 
 Then execute the following commands (without quotes):
 
-'./scripts/feeds update heimdall'
-'./scripts/feeds install heimdall'
+'./scripts/feeds update beithar'
+'./scripts/feeds install beithar'
 
 After confirming that this was successful, run menuconfig:
 
