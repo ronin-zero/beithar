@@ -1,5 +1,5 @@
 menu "Development Configuration"
-	depends on PACKAGE_syscall-sensors
+	depends on PACKAGE_OLD-syscall-sensors
 
 config SYSCALL_SENSORS_LOCAL
 	bool "Development build (local source)"
