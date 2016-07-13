@@ -40,16 +40,16 @@ define Package/syscall-sensor/description
 endef
 
 define Build/Clean
-  rm -rf $(PKG_BUILD_DIR)
+	rm -rf $(PKG_BUILD_DIR)
 endef
 
 define Build/Prepare
-  $(PKG_UNPACK)
+	$(PKG_UNPACK)
 endef
 
 define Package/syscall-sensor/install
-  $(INSTALL_DIR) $(1)/usr/sbin/
-  $(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensor/ $(1)/usr/sbin
+	$(INSTALL_DIR) $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensor/ $(1)/usr/sbin
 endef
 
 $(eval $(call BuildPackage,heimdall))
