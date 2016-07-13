@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=OLD-syscall-sensors
+PKG_NAME:=old-syscall-sensors
 PKG_VERSION:=1.3.1
 PKG_RELEASE:=1
 PKG_MAINTAINER:=ronin-zero (浪人ー無) <ronin-zero@github.com>
@@ -15,20 +15,20 @@ PKG_SOURCE_VERSION:=HEAD
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-define Package/OLD-syscall-sensors
+define Package/old-syscall-sensors
 	SECTION:=utils
 	CATEGORY:=Utilities
-	TITLE:=System Call Sensors (OLD)
+	TITLE:=Old System Call Sensors 
 	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_ENABLE_DEFAULT_TRACERS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE +@KERNEL_FUNCTION_PROFILER
 endef
 
-define Package/OLD-syscall-sensors/description
+define Package/old-syscall-sensors/description
 A program for monitoring system calls made by
 processes.  They can be used to train a
 support-vector machine for malware detection.
 endef
 
-define Package/OLD-syscall-sensors/config
+define Package/old-syscall-sensors/config
 	source "$(SOURCE)/Config.in"
 endef
 
@@ -48,9 +48,9 @@ endif
 endef
 
 
-define Package/OLD-syscall-sensors/install
+define Package/old-syscall-sensors/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/OLD-syscall-sensors $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/old-syscall-sensors $(1)/usr/sbin
 endef
 
 ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
@@ -58,4 +58,4 @@ ifeq ($(CONFIG_SYSCALL_SENSORS_GDB),y)
   CXXFLAGS += -g
 endif
 
-$(eval $(call BuildPackage,syscall-sensors))
+$(eval $(call BuildPackage,old-syscall-sensors))
