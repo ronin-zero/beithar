@@ -16,9 +16,9 @@ include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
 define Package/heimdall
-  SECTION:=utils
-  CATEGORY:=Utilities
-  TITLE:=Heimdall Malware/Anomaly Detection Suite
+ 	SECTION:=utils
+	CATEGORY:=Utilities
+	TITLE:=Heimdall Malware/Anomaly Detection Suite
 endef
 
 define Package/heimdall/description
@@ -28,10 +28,10 @@ define Package/heimdall/description
 endef
 
 define Package/syscall-sensor
-  SECTION:=utils
-  CATEGORY:=Utilities
-  TITLE:=System Call Sensing Utility
-  DEPENDS:=heimdall +librt +libpthread +libstdcpp \
+	SECTION:=utils
+	CATEGORY:=Utilities
+	TITLE:=System Call Sensing Utility
+	DEPENDS:=heimdall +librt +libpthread +libstdcpp \
 		+@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_ENABLE_DEFAULT_TRACERS +@KERNEL_FUNCTION_TRACER \
 		+@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE +@KERNEL_FUNCTION_PROFILER
 endef
@@ -54,4 +54,5 @@ define Package/syscall-sensor/install
   $(INSTALL_BIN) $(PKG_BUILD_DIR)/syscall-sensor/ $(1)/usr/sbin
 endef
 
+$(eval $(call BuildPackage,heimdall))
 $(eval $(call BuildPackage,syscall-sensor))
