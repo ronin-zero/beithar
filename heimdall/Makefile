@@ -3,7 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=heimdall
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
-PKG_MAINTAINER:=ronin-zero (浪人ー無) <ronin-zero@github.com>
+PKG_MAINTAINER:=ronin-zero <ronin-zero@github.com>
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
@@ -22,16 +22,28 @@ define Package/heimdall
 endef
 
 define Package/heimdall/description
-  This is a set of utilities for malware and anomaly detection.
-  For instance, syscall-sensor is a utility that
-  logs system call information.
+  Heimdall is a robust, configurable security system that coordinates sensors,
+  detectors, and mitigators.  Utilizing cutting-edge machine learning techniques,
+  Heimdall can monitor a system for anomalous behavior (caused by malware, for
+  instance), identify, and mitigate the source.
+  
+  Currently, this package is in development. Selecting this package will not
+  add any code or functionality to your kernel.  It is a stub for development
+  purposes.
+
+  The sensors are implemented and available.  To include them, select package
+  "syscall-sensor."
+
+  The detectors are coming soon.
+
+  Mitigators are theoretical, but hopefully coming.
 endef
 
 define Package/syscall-sensor
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=System Call Sensing Utility
-	DEPENDS:=heimdall +librt +libpthread +libstdcpp	+@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_ENABLE_DEFAULT_TRACERS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE +@KERNEL_FUNCTION_PROFILER
+	DEPENDS:=+librt +libpthread +libstdcpp	+@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_ENABLE_DEFAULT_TRACERS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE +@KERNEL_FUNCTION_PROFILER
 endef
 
 define Package/syscall-sensor/description
