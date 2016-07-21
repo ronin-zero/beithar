@@ -3,7 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=old-syscall-sensors
 PKG_VERSION:=1.3.1
 PKG_RELEASE:=1
-PKG_MAINTAINER:=ronin-zero (浪人ー無) <ronin-zero@github.com>
+PKG_MAINTAINER:=ronin-zero <ronin-zero@github.com>
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)

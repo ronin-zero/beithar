@@ -3,12 +3,12 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=anomaly-detectors
 PKG_VERSION:=1.2.1
 PKG_RELEASE:=1
-PKG_MAINTAINER:=Alexander Duff <amd435@drexel.edu>
+PKG_MAINTAINER:=ronin-zero <ronin-zero@github.com>
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/alexanderduff/linux_anomaly_detection.git
+PKG_SOURCE_URL:=https://github.com/ronin-zero/linux_anomaly_detection.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_VERSION:=HEAD
 
