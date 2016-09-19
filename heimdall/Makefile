@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=heimdall
-PKG_VERSION:=1.4
-PKG_RELEASE:=5
+PKG_VERSION:=1.5
+PKG_RELEASE:=6
 PKG_MAINTAINER:=ronin-zero <ronin-zero@github.com>
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
