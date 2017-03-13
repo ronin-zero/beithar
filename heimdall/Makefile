@@ -51,6 +51,19 @@ define Package/syscall-sensor/description
   See 'syscall-sensor -h' or 'syscall-sensor --help' for more information.
 endef
 
+define Package/syscall-detector
+	SECTION:=utils
+	CATEGORY:=Utilities
+	TITLE:=System Call-Based Anomaly Detector
+	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS
+endef
+
+define Package/syscall-detector/description
+  This program monitors sequences of system calls.  Based on frequencies of ngrams of
+  system calls over the course of a given trace window, it performs anomaly detection.
+  See 'syscall-detector -h' or syscall-detector --help' for more information.
+endef
+
 define Build/Clean
 	rm -rf $(PKG_BUILD_DIR)
 endef
