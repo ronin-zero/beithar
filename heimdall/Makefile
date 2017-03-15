@@ -43,7 +43,7 @@ define Package/syscall-sensor
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=System Call Sensing Utility
-	DEPENDS:=+librt +libpthread +libstdcpp	+@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS
+	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS
 endef
 
 define Package/syscall-sensor/description
