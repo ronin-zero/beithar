@@ -1,0 +1,22 @@
+menu "Heimdall Program Suite Configuration"
+    depends on PACKAGE_heimdall
+
+config HEIMDALL_LOCAL
+    bool "Use Local Source"
+    default n
+    help
+        This is for the developers to make changes to the package source code
+	    without having to download the entire thing from git-hub.
+
+	    Unless you are one of the developers on the project, you want to leave this as 'n'
+
+config HEIMDALL_LOCAL_SOURCE_PATH
+    depends on HEIMDALL_LOCAL
+    string "Local source location (directory)"
+    help
+        List the directory where your local copy of the source code can be found.
+	    For example: '/home/username/heimdall/'
+	    The path should end with a trailing / and that directory could be the root of
+    	where your source for the code is.
+
+endmenu
