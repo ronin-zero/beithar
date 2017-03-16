@@ -49,6 +49,8 @@ The detectors are coming soon.
 Mitigators are theoretical, but hopefully coming.
 endef
 
+
+
 define Package/syscall-sensor
   $(call Package/heimdall/default)
   MENU:=1
@@ -103,7 +105,13 @@ define Build/Clean
 endef
 
 define Build/Prepare
-  $(PKG_UNPACK)
+  ifeq ($(CONFIG_HEIMDALL_LOCAL),y)
+	rm -rf $(PKG_BUILD_DIR)/
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) $(CONFIG_HEIMDALL_LOCAL_SOURCE_PATH)* $(PKG_BUILD_DIR)
+  else
+    $(PKG_UNPACK)
+  endif
 endef
 
 define Package/syscall-sensor/install
