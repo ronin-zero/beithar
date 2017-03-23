@@ -57,7 +57,8 @@ define Package/syscall-sensor
 	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE
 endef
 
-define Package/syscall-sensor/config source $(SOURCE)/syscall-sensor/Config.in
+define Package/syscall-sensor/config 
+	source $(SOURCE)/syscall-sensor/Config.in
 endef
 
 define Package/syscall-sensor/description
