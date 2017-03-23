@@ -54,11 +54,10 @@ define Package/syscall-sensor
 	$(call Package/heimdall/default)
 	MENU:=1
 	TITLE:=System Call Sensing Utility
-	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS
+	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE
 endef
 
-define Package/syscall-sensor/config
-	source $(SOURCE)/syscall-sensor/Config.in
+define Package/syscall-sensor/config source $(SOURCE)/syscall-sensor/Config.in
 endef
 
 define Package/syscall-sensor/description
@@ -78,7 +77,7 @@ define Package/syscall-detector
 	$(call Package/heimdall/default)
 	MENU:=1
 	TITLE:=System Call-Based Anomaly Detector
-	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS
+	DEPENDS:=+librt +libpthread +libstdcpp +@KERNEL_FTRACE +@KERNEL_FTRACE_SYSCALLS +@KERNEL_FUNCTION_TRACER +@KERNEL_FUNCTION_GRAPH_TRACER +@KERNEL_DYNAMIC_FTRACE
 endef
 
 define Package/syscall-detector/config
