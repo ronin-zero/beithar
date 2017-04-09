@@ -75,7 +75,7 @@ else
 endif
 
 ifeq ($(CONFIG_SYSCALL-SENSOR_DEBUG_COUT),y)
-	SYSCALL-SENSOR_MAKE_OPT+=-DDEBUG_COUT
+	SYSCALL-SENSOR_MAKE_OPT:=-DDEBUG_COUT
 endif
 
 define Package/syscall-detector
