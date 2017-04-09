@@ -6,3 +6,10 @@ config SYSCALL-SENSOR_GDB
     default n
     help
         If you would like to run the program through GDB, enable this option.
+
+config SYSCALL-SENSOR_DEBUG_COUT
+    depends on PACKAGE_syscall-sensor
+    default n
+    help
+        Leave standard out, standard in, and standard error file descriptors
+        open.  Useful when running as a daemon and trying to debug.

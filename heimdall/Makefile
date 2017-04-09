@@ -74,6 +74,10 @@ else
  	SYSCALL-SENSOR_CONF_OPT:=-DCMAKE_BUILD_TYPE=Release
 endif
 
+ifeq ($(CONFIG_SYSCALL-SENSOR_DEBUG_COUT),y)
+	SYSCALL-SENSOR_MAKE_OPT+=-DDEBUG_COUT
+endif
+
 define Package/syscall-detector
 	$(call Package/heimdall/default)
 	MENU:=1
@@ -93,7 +97,7 @@ endef
 
 SYSCALL-DETECTOR_SUBDIR:=$(PKG_BUILD_DIR)/syscall-detector
 
-ifeq ($(CONFIG_DETECTOR-SENSOR_GDB),y)
+ifeq ($(CONFIG_SYSCALL-DETECTOR_GDB),y)
 	SYSCALL-DETECTOR_CONF_OPT:=-DCMAKE_BUILD_TYPE=Debug
 else
 	SYSCALL-DETECTOR_CONF_OPT:=-DCMAKE_BUILD_TYPE=Release
