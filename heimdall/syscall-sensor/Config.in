@@ -9,6 +9,7 @@ config SYSCALL-SENSOR_GDB
 
 config SYSCALL-SENSOR_DEBUG_COUT
     depends on PACKAGE_syscall-sensor
+    bool "Leave standard file descriptors open"
     default n
     help
         Leave standard out, standard in, and standard error file descriptors
