@@ -2,7 +2,6 @@ config SYSCALL-DETECTOR_GDB
     depends on PACKAGE_syscall-detector
     bool "Compile with support for GDB"
     select PACKAGE_gdb
-    select PACKAGE_gdbserver
     default n
     help
         If you would like to run the program through GDB, enable this option.
