@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=heimdall
-PKG_VERSION:=2.01
-PKG_RELEASE:=11
+PKG_VERSION:=2.02
+PKG_RELEASE:=12
 PKG_MAINTAINER:=ronin-zero <ronin-zero@github.com>
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
@@ -28,7 +28,7 @@ define Package/heimdall
 endef
 
 define Package/heimdall/config
-	source $(SOURCE)/Config.in
+	source "$(SOURCE)/Config.in"
 endef
 
 define Package/heimdall/description
@@ -58,7 +58,7 @@ define Package/syscall-sensor
 endef
 
 define Package/syscall-sensor/config 
-	source $(SOURCE)/syscall-sensor/Config.in
+	source "$(SOURCE)/syscall-sensor/Config.in"
 endef
 
 define Package/syscall-sensor/description
@@ -86,7 +86,7 @@ define Package/syscall-detector
 endef
 
 define Package/syscall-detector/config
-	source $(SOURCE)/syscall-detector/Config.in
+	source "$(SOURCE)/syscall-detector/Config.in"
 endef
 
 define Package/syscall-detector/description
